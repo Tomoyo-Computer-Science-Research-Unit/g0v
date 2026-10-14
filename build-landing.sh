@@ -39,7 +39,8 @@ chmod 755 "$stage"
 cp -r "$SRC/site/." "$stage/"
 sed -i "s/VERSION/$rev/g" "$stage/index.html"
 mkdir -p "$DIR/site"
-rsync -a --delete --exclude='/*/' --chmod=D755,F644 "$stage/" "$DIR/site/"
+# Os subdiretórios são dos projetos; só cursors/ (os cursores da landing) vai junto.
+rsync -a --delete --include='/cursors/' --include='/cursors/**' --exclude='/*/' --chmod=D755,F644 "$stage/" "$DIR/site/"
 rm -rf "$stage"
 
 rsync -a --chmod=D755,F644 "$SRC/conf/" "$DIR/conf/"

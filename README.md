@@ -7,6 +7,7 @@ do g0v de Taiwan. Cada projeto tem o seu repositório; este guarda o que é comu
 | --- | --- | --- |
 | Perdeu, Playboy | [perdeu-playboy](https://github.com/Tomoyo-Computer-Science-Research-Unit/perdeu-playboy) | `/perdeu-playboy/` |
 | Emendas | [emendas-rj](https://github.com/Tomoyo-Computer-Science-Research-Unit/emendas-rj) | `/emendas/` |
+| Como votou seu vereador | [como-votou](https://github.com/Tomoyo-Computer-Science-Research-Unit/como-votou) | `/vereadores/` |
 
 ## O que há aqui
 
@@ -14,7 +15,7 @@ do g0v de Taiwan. Cada projeto tem o seu repositório; este guarda o que é comu
 site/                 landing (HTML, CSS, JS, mon), com os efeitos do tomoyo.systems
 conf/default.conf     nginx: um servidor estático para a raiz e todos os projetos
 docker-compose.yml    container g0v-static (nginx:alpine) atrás do Traefik do servidor
-cron.d/g0v            as três rodadas diárias, instalado em /etc/cron.d/g0v
+cron.d/g0v            as rodadas diárias de cada projeto, instalado em /etc/cron.d/g0v
 build-landing.sh      publica landing, conf e cron a partir de main
 ```
 

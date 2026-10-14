@@ -280,6 +280,11 @@ html.fx[data-theme="dark"] .banner__title {
   transition: transform 0.12s ease-out;
 }
 
+/* Só os ícones que são tinta pura; o mon do Perdeu, Playboy tem sangue e fica como está. */
+[data-theme="dark"] .project__thumb img.thumb--ink {
+  filter: invert(1);
+}
+
 [data-theme="dark"] .mon-float img {
   filter: invert(1);
 }

@@ -1,0 +1,5 @@
+# g0v.tomoyo.systems: instalado em /etc/cron.d/g0v pelo build-landing.sh. Horários em UTC
+# (06:07, 06:23 e 06:53 de Brasília). Cada script se atualiza sozinho a partir do seu repositório.
+7 9 * * *  root flock -n /root/g0v/.landing.lock /root/g0v/build-landing.sh >> /root/g0v/build-landing.log 2>&1
+23 9 * * * root flock -n /root/g0v/.build.lock /root/g0v/build-site.sh >> /root/g0v/build-site.log 2>&1
+53 9 * * * root flock -n /root/g0v/.build-emendas.lock /root/g0v/build-emendas.sh >> /root/g0v/build-emendas.log 2>&1

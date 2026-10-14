@@ -344,3 +344,22 @@ html[data-hide~="mon"] .mon-float {
 }
 
 
+
+/* Mesmos tamanhos dos flutuantes do tomoyo.systems (Discord e cubo). */
+@media (max-width: 600px) {
+  .mon-float img {
+    width: 72px;
+    height: 72px;
+  }
+}
+@media (max-width: 420px) {
+  .mon-float {
+    right: 8px;
+    bottom: 8px;
+    padding: 6px;
+  }
+  .mon-float img {
+    width: 52px;
+    height: 52px;
+  }
+}

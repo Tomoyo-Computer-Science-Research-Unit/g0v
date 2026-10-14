@@ -230,130 +230,28 @@ html.fx[data-theme="dark"] .banner__title {
   filter: url(#print-fx-dark);
 }
 
-html.has-scope,
-html.has-scope * {
-  cursor: none !important;
-}
-
-html.scope-off .scope {
-  opacity: 0 !important;
-}
-
-.scope {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: block;
-  color: #fff;
-  mix-blend-mode: difference;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s;
-}
-
-.scope.is-live {
-  opacity: 1;
-}
-
-.scope svg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 120px;
-  height: 120px;
-  margin: -60px 0 0 -60px;
-  overflow: visible;
-}
-
-.scope__ring circle:first-child {
-  transition: r 0.35s cubic-bezier(0.2, 0.9, 0.2, 1.2);
-}
-
-.scope__ticks {
-  transform-origin: 0 0;
-  animation: scope-spin 8s linear infinite;
-}
-
-.scope__lock {
-  opacity: 0;
-  transform: scale(1.6);
-  transform-origin: 0 0;
-  transition: opacity 0.2s, transform 0.35s cubic-bezier(0.2, 0.9, 0.2, 1.2);
-}
-
-.scope.is-lock .scope__ring circle:first-child {
-  r: 24;
-}
-
-.scope.is-lock .scope__ticks {
-  animation-duration: 1.6s;
-}
-
-.scope.is-lock .scope__lock {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.scope__fire {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.scope.is-fire .scope__fire {
-  animation: scope-fire 0.28s ease-out;
-}
-
-.scope.is-fire .scope__ring circle:first-child {
-  animation: scope-kick 0.28s ease-out;
-}
-
-@keyframes scope-spin {
-  to {
-    transform: rotate(360deg);
+/* Cursors: 1-bit, 16 px, as X11 and Plan 9 drew them. The arrow is Plan 9's
+   (devmouse.c); the hand and the I-beam are X11's hand2 and xterm from the
+   cursor font; the open and closed hands are ours, for things that drag.
+   Each has a 2x copy for dense screens. Mouse only: touch keeps the defaults. */
+:root { --cur-arrow: default; --cur-pointer: pointer; --cur-text: text; --cur-grab: grab; --cur-grabbing: grabbing; }
+@media (hover: hover) and (pointer: fine) {
+  :root {
+    --cur-arrow: image-set(url(/cursors/arrow.png) 1x, url(/cursors/arrow@2x.png) 2x) 1 1, default;
+    --cur-pointer: image-set(url(/cursors/pointer.png) 1x, url(/cursors/pointer@2x.png) 2x) 0 0, pointer;
+    --cur-text: image-set(url(/cursors/text.png) 1x, url(/cursors/text@2x.png) 2x) 4 7, text;
+    --cur-grab: image-set(url(/cursors/grab.png) 1x, url(/cursors/grab@2x.png) 2x) 8 8, grab;
+    --cur-grabbing: image-set(url(/cursors/grabbing.png) 1x, url(/cursors/grabbing@2x.png) 2x) 8 8, grabbing;
   }
-}
-
-@keyframes scope-fire {
-  0% {
-    transform: scale(1.8);
+  [data-theme="dark"] {
+    --cur-grab: image-set(url(/cursors/grab-dark.png) 1x, url(/cursors/grab-dark@2x.png) 2x) 8 8, grab;
+    --cur-grabbing: image-set(url(/cursors/grabbing-dark.png) 1x, url(/cursors/grabbing-dark@2x.png) 2x) 8 8, grabbing;
   }
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes scope-kick {
-  0% {
-    stroke-width: 4px;
-  }
-  to {
-    stroke-width: 1.2px;
-  }
-}
-
-.shatter-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 950;
-  width: 0;
-  height: 0;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.shatter-layer--fixed {
-  position: fixed;
-}
-
-.ricochet-spark {
-  position: absolute;
-  width: 12px;
-  height: 2px;
-  border-radius: 1px;
-  background: var(--ink);
-  pointer-events: none;
+  html { cursor: var(--cur-arrow); }
+  input, textarea, [contenteditable="true"] { cursor: var(--cur-text); }
+  a, button, [role="button"], summary, label, select,
+  input[type="checkbox"], input[type="radio"], input[type="submit"], input[type="button"], input[type="file"], input[type="range"] { cursor: var(--cur-pointer); }
+  button:disabled, input:disabled, [aria-disabled="true"] { cursor: var(--cur-arrow); }
 }
 
 /* --- Mon flutuante, como o Discord e o cubo do tomoyo.systems: arrastável, clique abre o site --- */
@@ -395,14 +293,14 @@ html.scope-off .scope {
   transition: none;
 }
 
-html .mon-float,
-html .mon-float * {
-  cursor: url(/cursor-grab.png) 16 16, grab !important;
+.mon-float,
+.mon-float * {
+  cursor: var(--cur-grab);
 }
 
-html .mon-float.is-holding,
-html .mon-float.is-holding * {
-  cursor: url(/cursor-grabbing.png) 16 16, grabbing !important;
+.mon-float.is-holding,
+.mon-float.is-holding * {
+  cursor: var(--cur-grabbing);
 }
 
 .float-close {
@@ -447,21 +345,3 @@ html[data-hide~="mon"] .mon-float {
   }
 }
 
-/* Marca de bala (como no tomoyo.systems): núcleo de tinta com um fio de papel rasgado em volta
-   e uma mancha leve; some sozinha em alguns segundos. */
-.bullet-hole {
-  position: absolute;
-  translate: -50% -50%;
-  background: var(--ink);
-  pointer-events: none;
-  box-shadow: 0 0 0 1px var(--paper), 0 0 0 2px color-mix(in srgb, var(--ink) 30%, transparent);
-}
-
-.shatter-flash {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--ink);
-  pointer-events: none;
-}

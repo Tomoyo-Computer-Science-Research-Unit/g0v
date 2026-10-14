@@ -343,10 +343,4 @@ html[data-hide~="mon"] .mon-float {
   display: none;
 }
 
-@media (max-width: 900px) {
-  .mon-float img {
-    width: 120px;
-    height: 120px;
-  }
-}
 

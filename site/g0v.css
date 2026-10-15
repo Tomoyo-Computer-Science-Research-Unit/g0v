@@ -357,3 +357,10 @@ html[data-hide~="mon"] .mon-float {
     height: 52px;
   }
 }
+
+/* Na landing o Discord fica acima do mon giratório, como o cubo acima do Discord no tomoyo.systems. */
+:root { --g0v-discord-bottom: 136px; }
+html[data-hide~="mon"] { --g0v-discord-bottom: 16px; }
+@media (max-width: 600px) {
+  :root { --g0v-discord-bottom: 82px; }
+}

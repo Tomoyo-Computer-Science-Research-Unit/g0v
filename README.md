@@ -7,6 +7,7 @@ do g0v de Taiwan. Cada projeto tem o seu repositório; este guarda o que é comu
 | --- | --- | --- |
 | Perdeu, Playboy | [perdeu-playboy](https://github.com/Tomoyo-Computer-Science-Research-Unit/perdeu-playboy) | `/perdeu-playboy/` |
 | Congresso | [congresso](https://github.com/Tomoyo-Computer-Science-Research-Unit/congresso) | `/congresso/` (antes `/emendas/`) |
+| Assembleias | [assembleias](https://github.com/Tomoyo-Computer-Science-Research-Unit/assembleias) | `/assembleias/` |
 | Vereadores | [como-votou](https://github.com/Tomoyo-Computer-Science-Research-Unit/como-votou) | `/vereadores/` |
 
 ## O que há aqui

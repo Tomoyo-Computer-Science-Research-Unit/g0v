@@ -4,3 +4,4 @@
 23 9 * * * root flock -n /root/g0v/.build.lock /root/g0v/build-site.sh >> /root/g0v/build-site.log 2>&1
 53 9 * * * root flock -n /root/g0v/.build-emendas.lock /root/g0v/build-emendas.sh >> /root/g0v/build-emendas.log 2>&1
 23 10 * * * root flock -n /root/g0v/.build-vereadores.lock /root/g0v/build-vereadores.sh >> /root/g0v/build-vereadores.log 2>&1
+53 10 * * * root flock -n /root/g0v/.build-assembleias.lock /root/g0v/build-assembleias.sh >> /root/g0v/build-assembleias.log 2>&1

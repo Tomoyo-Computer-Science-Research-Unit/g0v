@@ -6,7 +6,7 @@ do g0v de Taiwan. Cada projeto tem o seu repositório; este guarda o que é comu
 | Projeto | Repositório | Caminho |
 | --- | --- | --- |
 | Perdeu, Playboy | [perdeu-playboy](https://github.com/Tomoyo-Computer-Science-Research-Unit/perdeu-playboy) | `/perdeu-playboy/` |
-| Emendas | [emendas-rj](https://github.com/Tomoyo-Computer-Science-Research-Unit/emendas-rj) | `/emendas/` |
+| Congresso | [emendas-rj](https://github.com/Tomoyo-Computer-Science-Research-Unit/emendas-rj) | `/congresso/` (antes `/emendas/`) |
 | Vereadores | [como-votou](https://github.com/Tomoyo-Computer-Science-Research-Unit/como-votou) | `/vereadores/` |
 
 ## O que há aqui
